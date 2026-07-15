@@ -3,7 +3,11 @@ import { createBrowserRouter } from "react-router-dom";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <h3 className="text-2xl font-bold">Início</h3>,
+    element: (
+      <div className="min-h-screen bg-background text-foreground">
+        <h1 className="text-3xl">Teste tema</h1>
+      </div>
+    ),
   },
   {
     path: "/dividir-e-conquistar",
