@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
     path: "/dividir-e-conquistar",
     element: (
       <div className="min-h-screen bg-slate-950 px-6 py-16 text-slate-50">
-        <h3>Dividir e Conquistar</h3>
+        <h3>Dividir e conquistar</h3>
       </div>
     ),
   },
