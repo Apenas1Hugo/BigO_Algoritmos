@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 
+import { Navbar } from "./components/Layout/Navbar"
+
 export const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div className="min-h-screen bg-background text-foreground">
-        <h1 className="text-3xl">Teste tema</h1>
-      </div>
+      <Navbar></Navbar>
     ),
   },
   {
