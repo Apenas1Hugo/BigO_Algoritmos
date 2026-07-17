@@ -10,37 +10,45 @@ export function Navbar() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav>
-      <div>
-        <h3>BigO e Algoritmos</h3>
-      </div>
-      <div>
-        <Button icon={House} onClick={() => void navigate("/")}>
-          {" "}
-          <span className="hidden sm:inline">Inicio</span>
-        </Button>
+    <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-6">
+        <div>
+          <h3 className="text-xl font-bold text-foreground">
+            BigO e Algoritmos
+          </h3>
+        </div>
 
-        <Button
-          icon={LandPlot}
-          onClick={() => void navigate("/dividir-e-conquistar")}
-        >
-          {" "}
-          <span className="hidden sm:inline">Dividir-e-conquistar</span>
-        </Button>
-        <Button
-          icon={Box}
-          onClick={() => void navigate("/algoritmos-quadraticos")}
-        >
-          {" "}
-          <span className="hidden sm:inline">Algoritmos-quadraticos</span>
-        </Button>
-        <Button icon={TreePine} onClick={() => void navigate("/arvore")}>
-          {" "}
-          <span className="hidden sm:inline">Algoritmo de arvore</span>
-        </Button>
-        <Button icon={theme === "light" ? Sun : MoonStar} onClick={toggleTheme}>
-          {" "}
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            icon={House}
+            onClick={() => void navigate("/")}
+          >
+            <span className="hidden lg:inline">Início</span>
+          </Button>
+
+          <Button
+            icon={LandPlot}
+            onClick={() => void navigate("/dividir-e-conquistar")}
+          >
+            <span className="hidden lg:inline">Dividir e Conquistar</span>
+          </Button>
+
+          <Button
+            icon={Box}
+            onClick={() => void navigate("/algoritmos-quadraticos")}
+          >
+            <span className="hidden lg:inline">Algoritmos Quadráticos</span>
+          </Button>
+
+          <Button icon={TreePine} onClick={() => void navigate("/arvore")}>
+            <span className="hidden lg:inline">Árvore</span>
+          </Button>
+
+          <Button
+            icon={theme === "light" ? Sun : MoonStar}
+            onClick={toggleTheme}
+          />
+        </div>
       </div>
     </nav>
   );

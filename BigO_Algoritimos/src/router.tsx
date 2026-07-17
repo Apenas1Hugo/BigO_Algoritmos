@@ -10,7 +10,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: (
-          <div className="min-h-screen bg-slate-950 px-6 py-16 text-slate-50">
+          <div className="min-h-screen text-center bg-background px-6 py-16 text-foreground">
             <h3>Inicio</h3>
           </div>
         ),
