@@ -1,12 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import { Navbar } from "./components/Layout/Navbar"
+import { Footer } from "./components/Layout/Footer";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: (
+      <>
       <Navbar></Navbar>
+      <Footer></Footer>
+      </>
     ),
   },
   {
