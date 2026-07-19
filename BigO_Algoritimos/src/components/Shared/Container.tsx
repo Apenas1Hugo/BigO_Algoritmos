@@ -6,9 +6,9 @@ interface ContainerProps extends PropsWithChildren, HTMLAttributes<HTMLElement> 
 };
 
 const variantsClass = {
-    large: " ",
-    medium: " ",
-    small: " ",
+    large: "w-full max-w-7xl mx-auto px-6 py-10",
+    medium: "w-full rounded-2xl border border-border bg-card p-6 shadow-sm",
+    small: "transition-all",
 };
 
 const baseClass = " ";
