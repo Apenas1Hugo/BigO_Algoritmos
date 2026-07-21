@@ -1,9 +1,14 @@
 import { Container } from "../../components/shared/Container";
 import { PageHeader } from "../../components/shared/PageHeader";
 
+import { useNavigate } from "react-router-dom";
+import { Button } from "../../components/shared/Button"
+import { LandPlot } from "lucide-react";
+
 import tabela_bigo from "../../assets/tabela_bigo.png";
 
 export function HomePage() {
+   const navigate = useNavigate();
   return (
     <Container variant="large">
       <PageHeader
@@ -38,6 +43,15 @@ export function HomePage() {
         title="Objetivo do projeto"
         description="O conteúdo foi pensado para estudantes e desenvolvedores que desejam compreender melhor os fundamentos da análise de algoritmos. O objetivo é apresentar os conceitos de forma clara e organizada, utilizando exemplos práticos e explicações acessíveis para facilitar o aprendizado e servir como material de consulta sempre que necessário."
       />
+      <div className="mt-10 flex justify-end">
+         <Button
+            icon={LandPlot}
+            onClick={() => void navigate("/dividir-e-conquistar")}
+            variant="secondary"
+          >
+            <span className="hidden lg:inline"> Dividir e Conquistar → </span>
+          </Button>
+      </div>
     </Container>
   );
 }
