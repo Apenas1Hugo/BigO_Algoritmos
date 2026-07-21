@@ -1,5 +1,6 @@
 import { Mail, FolderGit2 } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { References } from "./ReferencesPages";
 
 export function Footer() {
   return (
@@ -7,6 +8,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-4 px-6 py-5 sm:flex-row">
         <p className="text-sm text-muted-foreground">© Hugo Rodrigues 2026</p>
 
+       <References/>
         <div className="flex gap-3 ">
           <a
             href="https://github.com/Apenas1Hugo"
