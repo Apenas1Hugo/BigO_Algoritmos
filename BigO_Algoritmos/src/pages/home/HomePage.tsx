@@ -1,5 +1,7 @@
-import { Container } from "../../components/Shared/Container";
-import { PageHeader } from "../../components/Shared/PageHeader";
+import { Container } from "../../components/shared/Container";
+import { PageHeader } from "../../components/shared/PageHeader";
+
+import tabela_bigo from "../../assets/tabela_bigo.png";
 
 export function HomePage() {
   return (
@@ -10,8 +12,11 @@ export function HomePage() {
       />
 
       <Container variant="small">
-       
-       {/*COLOCAR IMAGEM DA TABELA bigO */}
+        <img
+          src={tabela_bigo}
+          alt="Tabela de complexidade Big O"
+          className="mx-auto m-10 w-full max-w-3xl cursor-pointer rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+        />
       </Container>
 
       <PageHeader

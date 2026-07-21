@@ -3,7 +3,7 @@ import { Sun, MoonStar, House, LandPlot, Box, TreePine } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../hooks/useTheme";
 
-import { Button } from "../Shared/Button";
+import { Button } from "../shared/Button";
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -19,10 +19,7 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          <Button
-            icon={House}
-            onClick={() => void navigate("/")}
-          >
+          <Button icon={House} onClick={() => void navigate("/")}>
             <span className="hidden lg:inline">Início</span>
           </Button>
 
