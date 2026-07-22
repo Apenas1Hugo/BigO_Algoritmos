@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { RootLayout } from "./components/Layout/RootLayout";
 
 import { HomePage } from "./pages/home/HomePage";
+import { DivideConquerPage } from "./pages/dividir_e_conquistar/DivideConquerPage";
 
 export const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dividir-e-conquistar",
-        element: <></>,
+        element: <DivideConquerPage />,
       },
       {
         path: "/algoritmos-quadraticos",

@@ -20,7 +20,7 @@ export function References() {
         Referências
       </button>
 
-       <dialog
+      <dialog
         ref={dialogRef}
         className=" rounded-2xl border border-border bg-card p-6 text-foreground shadow-xl "
       >
@@ -53,6 +53,19 @@ export function References() {
             referências acima, não reproduzindo trechos literais das obras
             citadas.
           </li>
+
+          <li>
+            Link das imagens encontradas no site
+            <br></br>
+            <a
+              href="https://medium.com/@gustavoeyros/desempenho-de-algoritmos-o-que-%C3%A9-big-o-b01b8a96c3b9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-primary"
+            >
+              Tabela da homepage
+            </a>
+          </li>
         </ul>
 
         <div className="mt-6 flex justify-end">
@@ -64,7 +77,6 @@ export function References() {
           </button>
         </div>
       </dialog>
-
     </>
   );
 }
