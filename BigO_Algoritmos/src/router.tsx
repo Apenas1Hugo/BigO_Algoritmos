@@ -4,6 +4,7 @@ import { RootLayout } from "./components/Layout/RootLayout";
 
 import { HomePage } from "./pages/home/HomePage";
 import { DivideConquerPage } from "./pages/dividir_e_conquistar/DivideConquerPage";
+import { QuadraticAlgorithmsPage } from "./pages/algoritmos_quadraticos/QuadraticAlgorithmPage";
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/algoritmos-quadraticos",
-        element: <></>,
+        element: <QuadraticAlgorithmsPage/>,
       },
       {
         path: "/arvore",
