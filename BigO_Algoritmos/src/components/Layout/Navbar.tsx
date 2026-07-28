@@ -47,7 +47,7 @@ export function Navbar() {
         </motion.div>
 
         <motion.div
-          className="flex items-center gap-2"
+          className="flex items-center gap-3"
           initial={{
             x: 50,
             opacity: 0,
