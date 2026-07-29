@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { motion } from "motion/react";
 
 export function References() {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -13,14 +14,50 @@ export function References() {
 
   return (
     <>
-      <button
+      <motion.button
+        whileHover={{
+          scale: 1.05,
+          y: -2,
+        }}
+        whileTap={{
+          scale: 0.96,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 20,
+        }}
         onClick={handleOpen}
         className="transition-colors hover:text-primary border border-border rounded-2xl p-1.5"
       >
         Referências
-      </button>
+      </motion.button>
 
-      <dialog
+      <motion.dialog
+        initial={{
+          opacity: 0,
+          scale: 0.9,
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "easeOut",
+        }}
+        drag
+        dragConstraints={{
+          top: -55,
+          bottom: 55,
+          left: -50,
+          right: 50,
+        }}
+        dragElastic={0.15}
+        whileDrag={{
+          scale: 1.02,
+          cursor: "grabbing",
+        }}
         ref={dialogRef}
         className=" rounded-2xl border border-border bg-card p-6 text-foreground shadow-xl "
       >
@@ -69,14 +106,26 @@ export function References() {
         </ul>
 
         <div className="mt-6 flex justify-end">
-          <button
+          <motion.button
+            whileHover={{
+              scale: 1.05,
+              y: -2,
+            }}
+            whileTap={{
+              scale: 0.96,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 20,
+            }}
             onClick={handleClose}
             className="rounded-2xl border border-border px-4 py-2 transition-colors hover:text-primary"
           >
             Fechar
-          </button>
+          </motion.button>
         </div>
-      </dialog>
+      </motion.dialog>
     </>
   );
 }
