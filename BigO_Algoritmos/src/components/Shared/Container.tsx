@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import type { PropsWithChildren } from "react";
 import type { HTMLAttributes } from "react";
 
@@ -18,8 +19,28 @@ export function Container({
   className,
 }: ContainerProps) {
   return (
-    <div className={[variantsClass[variant], className].join(" ")}>
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 20,
+        scale: 0.98,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        scale: 1,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.15,
+      }}
+      transition={{
+        duration: 0.5,
+        ease: "easeOut",
+      }}
+      className={[variantsClass[variant], className].join(" ")}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 }
