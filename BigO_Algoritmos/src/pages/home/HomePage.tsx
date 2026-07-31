@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/shared/Button";
 import { LandPlot } from "lucide-react";
 
-import tabela_bigo from "../../assets/tabela_bigo.png";
+
+import { BigOGrowthChart } from "./BigOChart";
 
 export function HomePage() {
   const navigate = useNavigate();
@@ -20,12 +21,8 @@ export function HomePage() {
         title="Por que aprender Big O?"
         description="Compreender a notação Big O é fundamental para o desenvolvimento de software de qualidade. Em aplicações pequenas, diferentes algoritmos podem apresentar tempos de execução muito semelhantes. Entretanto, conforme a quantidade de dados aumenta, pequenas diferenças na complexidade podem resultar em ganhos ou perdas significativas de desempenho. Conhecer a complexidade de um algoritmo ajuda a escolher a solução mais adequada para cada problema, reduzindo o consumo de tempo de processamento e de recursos computacionais."
       />
-      <Container variant="small">
-        <img
-          src={tabela_bigo}
-          alt="Tabela de complexidade Big O"
-          className="mx-auto m-10 w-full max-w-3xl cursor-pointer rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-        />
+      <Container variant="small" className="m-10">
+        <BigOGrowthChart/>
       </Container>
 
       <PageHeader
