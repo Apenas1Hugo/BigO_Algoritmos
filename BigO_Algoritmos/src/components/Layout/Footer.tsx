@@ -13,7 +13,7 @@ export function Footer() {
         ease: "easeOut",
       }}
       viewport={{
-        once: true,
+        once: false,
         amount: 0.3,
       }}
       className="border-t border-border bg-background/80 backdrop-blur-md"

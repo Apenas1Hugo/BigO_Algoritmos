@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/shared/Button";
 import { LandPlot } from "lucide-react";
 
-
 import { BigOGrowthChart } from "./BigOChart";
 
 export function HomePage() {
@@ -21,10 +20,9 @@ export function HomePage() {
         title="Por que aprender Big O?"
         description="Compreender a notação Big O é fundamental para o desenvolvimento de software de qualidade. Em aplicações pequenas, diferentes algoritmos podem apresentar tempos de execução muito semelhantes. Entretanto, conforme a quantidade de dados aumenta, pequenas diferenças na complexidade podem resultar em ganhos ou perdas significativas de desempenho. Conhecer a complexidade de um algoritmo ajuda a escolher a solução mais adequada para cada problema, reduzindo o consumo de tempo de processamento e de recursos computacionais."
       />
-      <Container variant="small" className="m-10">
-        <BigOGrowthChart/>
-      </Container>
-
+      <div className="m-10">
+        <BigOGrowthChart />
+      </div>
       <PageHeader
         title="Como interpretar a tabela de complexidade?"
         description="A tabela de complexidade apresenta as principais ordens de crescimento utilizadas na análise de algoritmos. Complexidades como O(1), O(log n) e O(n) representam algoritmos que costumam escalar bem para grandes conjuntos de dados. Já algoritmos com complexidade O(n²), O(2ⁿ) ou O(n!) tendem a apresentar um crescimento muito mais acelerado do tempo de execução, tornando-se pouco eficientes quando o tamanho da entrada aumenta significativamente."

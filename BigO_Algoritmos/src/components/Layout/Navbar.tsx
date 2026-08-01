@@ -37,9 +37,6 @@ export function Navbar() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          whileHover={{
-            rotate: [0, -1, -2, -1, 0, 1, 2, 1, 0],
-          }}
         >
           <h3 className="text-xl font-bold text-foreground ">
             BigO e Algoritmos
