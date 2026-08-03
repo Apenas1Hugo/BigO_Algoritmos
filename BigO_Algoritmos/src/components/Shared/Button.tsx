@@ -13,7 +13,8 @@ const baseClasses =
 
 const variantClasses = {
   primary: "bg-primary text-primary-foreground font-semibold rounded-xl",
-  secondary: "bg-secondary-button border border-border rounded-3xl",
+  secondary:
+    "bg-card border border-border text-foreground rounded-lg px-4 py-2 text-sm font-medium shadow-sm hover:-translate-y-0.5 hover:border-primary hover:shadow-md",
   ghost: "rounded-lg text-foreground",
 };
 

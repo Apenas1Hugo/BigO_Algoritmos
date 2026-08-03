@@ -10,6 +10,31 @@ export function Navbar() {
   const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
 
+  const sentence = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const letter = {
+    hidden: {
+      opacity: 0,
+      y: 12,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.2,
+      },
+    },
+  };
+
+  const text = "BigO e Algoritmos";
+
   return (
     <motion.nav
       initial={{
@@ -32,15 +57,24 @@ export function Navbar() {
             y: [0, -5, 0],
           }}
           transition={{
-            delay: 1.5,
+            delay: 2,
             duration: 0.5,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         >
-          <h3 className="text-xl font-bold text-foreground ">
-            BigO e Algoritmos
-          </h3>
+          <motion.h3
+            variants={sentence}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-wrap text-xl font-bold text-foreground"
+          >
+            {text.split("").map((char, index) => (
+              <motion.span key={`${char}-${index}`} variants={letter}>
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.h3>
         </motion.div>
 
         <motion.div
@@ -54,7 +88,7 @@ export function Navbar() {
             opacity: 1,
           }}
           transition={{
-            delay: 1,
+            delay: 2,
             duration: 0.8,
             ease: "easeOut",
           }}
