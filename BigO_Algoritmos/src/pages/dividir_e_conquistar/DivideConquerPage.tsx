@@ -4,6 +4,7 @@ import { Container } from "../../components/shared/Container";
 import { PageHeader } from "../../components/shared/PageHeader";
 
 import { useNavigate } from "react-router-dom";
+import { TestAlgorithms } from "./TestAlgorithms";
 
 export function DivideConquerPage() {
   const navigate = useNavigate();
@@ -91,6 +92,7 @@ export function DivideConquerPage() {
           </>
         }
       />
+      <TestAlgorithms/>
       <div className="mt-10 flex justify-between">
         <Button
           icon={House}
