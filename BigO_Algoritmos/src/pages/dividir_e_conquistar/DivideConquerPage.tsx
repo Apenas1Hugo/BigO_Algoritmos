@@ -5,7 +5,7 @@ import { PageHeader } from "../../components/shared/PageHeader";
 
 import { useNavigate } from "react-router-dom";
 import {
-  SharedTestAlgorithms,
+  TestAlgorithms,
   type AlgorithmTab,
 } from "../../components/shared/TestAlgorithms";
 
@@ -116,7 +116,7 @@ export function DivideConquerPage() {
           </>
         }
       />
-      <SharedTestAlgorithms tabalgorithms={algoritmostestados} />
+      <TestAlgorithms tabalgorithms={algoritmostestados} />
       <div className="mt-10 flex justify-between">
         <Button
           icon={House}
