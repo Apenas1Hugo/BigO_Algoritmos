@@ -8,24 +8,21 @@ import {
   TestAlgorithms,
   type AlgorithmTab,
 } from "../../components/shared/TestAlgorithms";
+import { ArrayEditor } from "../../components/shared/ArrayEditor";
 
 const algoritmostestados: AlgorithmTab[] = [
   {
     id: "quick-sort",
     title: "Quick Sort",
     content: (
-      <p>
-        Área reservada para a visualização e execução do algoritmo Quick Sort.
-      </p>
+     <ArrayEditor/>
     ),
   },
   {
     id: "merge-sort",
     title: "Merge Sort",
     content: (
-      <p>
-        Área reservada para a visualização e execução do algoritmo Merge Sort.
-      </p>
+       <ArrayEditor/>
     ),
   },
 ];

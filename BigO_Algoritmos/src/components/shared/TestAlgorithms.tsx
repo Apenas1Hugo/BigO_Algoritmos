@@ -16,6 +16,7 @@ export function TestAlgorithms({ tabalgorithms }: AlgorithmTabProps) {
 
   const currentTab = useMemo(
     () => tabalgorithms.find((tab) => tab.id === activeTab)!,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [activeTab],
   );
 
