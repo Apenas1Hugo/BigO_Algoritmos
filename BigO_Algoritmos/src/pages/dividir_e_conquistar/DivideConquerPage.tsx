@@ -4,7 +4,31 @@ import { Container } from "../../components/shared/Container";
 import { PageHeader } from "../../components/shared/PageHeader";
 
 import { useNavigate } from "react-router-dom";
-import { TestAlgorithms } from "./TestAlgorithms";
+import {
+  SharedTestAlgorithms,
+  type AlgorithmTab,
+} from "../../components/shared/TestAlgorithms";
+
+const algoritmostestados: AlgorithmTab[] = [
+  {
+    id: "quick-sort",
+    title: "Quick Sort",
+    content: (
+      <p>
+        Área reservada para a visualização e execução do algoritmo Quick Sort.
+      </p>
+    ),
+  },
+  {
+    id: "merge-sort",
+    title: "Merge Sort",
+    content: (
+      <p>
+        Área reservada para a visualização e execução do algoritmo Merge Sort.
+      </p>
+    ),
+  },
+];
 
 export function DivideConquerPage() {
   const navigate = useNavigate();
@@ -92,7 +116,7 @@ export function DivideConquerPage() {
           </>
         }
       />
-      <TestAlgorithms/>
+      <SharedTestAlgorithms tabalgorithms={algoritmostestados} />
       <div className="mt-10 flex justify-between">
         <Button
           icon={House}
