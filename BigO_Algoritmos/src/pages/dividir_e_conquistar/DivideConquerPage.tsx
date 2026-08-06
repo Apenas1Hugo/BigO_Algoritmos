@@ -15,14 +15,26 @@ const algoritmostestados: AlgorithmTab[] = [
     id: "quick-sort",
     title: "Quick Sort",
     content: (
-     <ArrayEditor/>
+      <ArrayEditor>
+        {(array) => (
+          <Button variant="secondary" onClick={() => console.log(array)}>
+            Console log do Array
+          </Button>
+        )}
+      </ArrayEditor>
     ),
   },
   {
     id: "merge-sort",
     title: "Merge Sort",
     content: (
-       <ArrayEditor/>
+      <ArrayEditor>
+        {(array) => (
+          <Button variant="secondary" onClick={() => alert(array)}>
+            Alert do Array
+          </Button>
+        )}
+      </ArrayEditor>
     ),
   },
 ];

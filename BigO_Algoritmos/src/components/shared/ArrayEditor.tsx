@@ -1,10 +1,15 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { easeIn, motion, AnimatePresence } from "motion/react";
 import { Button } from "./Button";
 
+interface ArrayEditorProps {
+  children?: (array: number[]) => React.ReactNode;
+}
+
+
 import { CirclePlus, CircleMinus, Trash } from "lucide-react";
 
-export function ArrayEditor() {
+export function ArrayEditor({ children }: ArrayEditorProps) {
   const [array, setArray] = useState<number[]>([]);
   const [inputValue, setInputValue] = useState("");
 
@@ -28,11 +33,11 @@ export function ArrayEditor() {
   }
 
   const fadeSlideVariants = {
-    hidden: { y: -100, opacity: 0 },
+    hidden: { y: -20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { delay: 1, duration: 0.35, ease: easeIn },
+      transition: { delay: 0.10, duration: 0.35, ease: easeIn },
     },
   };
 
@@ -121,6 +126,9 @@ export function ArrayEditor() {
         >
           <span>Limpar lista</span>
         </Button>
+      </div>
+      <div>
+         {children?.(array)}
       </div>
     </motion.div>
   );
