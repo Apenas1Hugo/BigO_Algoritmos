@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "motion/react";
+import { easeIn, motion, AnimatePresence } from "motion/react";
 import { Button } from "./Button";
 
 import { CirclePlus, CircleMinus, Trash } from "lucide-react";
@@ -27,24 +27,55 @@ export function ArrayEditor() {
     setArray([]);
   }
 
+  const fadeSlideVariants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { delay: 1, duration: 0.35, ease: easeIn },
+    },
+  };
+
+  const numberVariants = {
+    hidden: { opacity: 0, scale: 0.5, y: 10 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { type: "spring" as const, stiffness: 400, damping: 25 },
+    },
+  };
+
   return (
-    <motion.div className="mt-8 flex w-full flex-col items-center gap-6">
+    <motion.div
+      variants={fadeSlideVariants}
+      initial="hidden"
+      whileInView="visible"
+      className="mt-8 flex w-full flex-col items-center gap-6"
+    >
       <div className="flex w-full max-w-4xl justify-center rounded-2xl border border-border bg-card p-4">
         <motion.div className="flex min-h-16 w-full flex-wrap justify-center gap-2">
-          {array.length === 0 ? (
-            <span className="text-sm text-muted-foreground mt-5">
-              A lista está vazia.
-            </span>
-          ) : (
-            array.map((number, index) => (
-              <div
-                key={`${number}-${index}`}
-                className="rounded-lg border border-border bg-background px-4 py-4 font-normal"
-              >
-                {number}
-              </div>
-            ))
-          )}
+          <AnimatePresence mode="popLayout">
+            {array.length === 0 ? (
+              <span className="text-sm text-muted-foreground mt-5">
+                A lista está vazia.
+              </span>
+            ) : (
+              array.map((number, index) => (
+                <motion.div
+                  key={`${number}-${index}`}
+                  layout
+                  variants={numberVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="rounded-lg border border-border bg-background px-4 py-4 font-normal"
+                >
+                  {number}
+                </motion.div>
+              ))
+            )}
+          </AnimatePresence>
         </motion.div>
       </div>
 
@@ -77,7 +108,7 @@ export function ArrayEditor() {
           icon={CircleMinus}
           variant="primary"
           onClick={handleRemoveLastNumber}
-           className="w-full sm:w-auto"
+          className="w-full sm:w-auto"
         >
           <span>Remover último número da lista</span>
         </Button>
@@ -86,7 +117,7 @@ export function ArrayEditor() {
           icon={Trash}
           variant="primary"
           onClick={handleClearArray}
-           className="w-full sm:w-auto"
+          className="w-full sm:w-auto"
         >
           <span>Limpar lista</span>
         </Button>

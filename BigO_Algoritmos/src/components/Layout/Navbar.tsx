@@ -88,7 +88,7 @@ export function Navbar() {
             opacity: 1,
           }}
           transition={{
-            delay: 2,
+            delay: 0.5,
             duration: 0.8,
             ease: "easeOut",
           }}
