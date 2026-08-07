@@ -9,19 +9,15 @@ import {
   type AlgorithmTab,
 } from "../../components/shared/TestAlgorithms";
 import { ArrayEditor } from "../../components/shared/ArrayEditor";
+import { QuickSort } from "./QuickSort";
+
+
 
 const algoritmostestados: AlgorithmTab[] = [
   {
     id: "quick-sort",
     title: "Quick Sort",
-    content: (
-      <ArrayEditor>
-        {(array) => (
-          <Button variant="secondary" onClick={() => console.log(array)}>
-            Console log do Array
-          </Button>
-        )}
-      </ArrayEditor>
+    content: ( <QuickSort/>
     ),
   },
   {

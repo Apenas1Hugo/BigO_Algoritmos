@@ -1,13 +1,13 @@
-import {  useState } from "react";
-import { easeIn, motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
+import { easeIn, motion } from "motion/react";
 import { Button } from "./Button";
 
 interface ArrayEditorProps {
   children?: (array: number[]) => React.ReactNode;
 }
 
-
 import { CirclePlus, CircleMinus, Trash } from "lucide-react";
+import { ViewArray } from "./ViewArray";
 
 export function ArrayEditor({ children }: ArrayEditorProps) {
   const [array, setArray] = useState<number[]>([]);
@@ -37,17 +37,7 @@ export function ArrayEditor({ children }: ArrayEditorProps) {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { delay: 0.10, duration: 0.35, ease: easeIn },
-    },
-  };
-
-  const numberVariants = {
-    hidden: { opacity: 0, scale: 0.5, y: 10 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { type: "spring" as const, stiffness: 400, damping: 25 },
+      transition: { delay: 0.1, duration: 0.35, ease: easeIn },
     },
   };
 
@@ -59,29 +49,7 @@ export function ArrayEditor({ children }: ArrayEditorProps) {
       className="mt-8 flex w-full flex-col items-center gap-6"
     >
       <div className="flex w-full max-w-4xl justify-center rounded-2xl border border-border bg-card p-4">
-        <motion.div className="flex min-h-16 w-full flex-wrap justify-center gap-2">
-          <AnimatePresence mode="popLayout">
-            {array.length === 0 ? (
-              <span className="text-sm text-muted-foreground mt-5">
-                A lista está vazia.
-              </span>
-            ) : (
-              array.map((number, index) => (
-                <motion.div
-                  key={`${number}-${index}`}
-                  layout
-                  variants={numberVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className="rounded-lg border border-border bg-background px-4 py-4 font-normal"
-                >
-                  {number}
-                </motion.div>
-              ))
-            )}
-          </AnimatePresence>
-        </motion.div>
+        <ViewArray array={array} />
       </div>
 
       <div className="flex w-full max-w-md justify-center">
@@ -127,9 +95,7 @@ export function ArrayEditor({ children }: ArrayEditorProps) {
           <span>Limpar lista</span>
         </Button>
       </div>
-      <div>
-         {children?.(array)}
-      </div>
+      <div>{children?.(array)}</div>
     </motion.div>
   );
 }
