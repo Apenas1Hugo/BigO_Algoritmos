@@ -20,7 +20,7 @@ export function PageHeader({
       >
         {title}
       </motion.h2>
-      <motion.p
+      <motion.div
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
@@ -31,7 +31,7 @@ export function PageHeader({
         className=" text-muted-foreground mb-1 text-sm leading-6"
       >
         {description}
-      </motion.p>
+      </motion.div>
     </div>
   );
 }
