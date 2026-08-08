@@ -9,7 +9,7 @@ import {
   type AlgorithmTab,
 } from "../../components/shared/TestAlgorithms";
 import { ArrayEditor } from "../../components/shared/ArrayEditor";
-import { QuickSort } from "./QuickSort";
+import { QuickSortView } from "./QuickSort";
 
 
 
@@ -17,7 +17,7 @@ const algoritmostestados: AlgorithmTab[] = [
   {
     id: "quick-sort",
     title: "Quick Sort",
-    content: ( <QuickSort/>
+    content: ( <QuickSortView/>
     ),
   },
   {

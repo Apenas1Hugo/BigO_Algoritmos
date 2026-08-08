@@ -70,7 +70,7 @@ export function ArrayEditor({ children }: ArrayEditorProps) {
       <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-center">
         <Button
           icon={CirclePlus}
-          variant="primary"
+          variant="secondary"
           onClick={handleAddNumber}
           className="w-full sm:w-auto"
         >
@@ -79,7 +79,7 @@ export function ArrayEditor({ children }: ArrayEditorProps) {
 
         <Button
           icon={CircleMinus}
-          variant="primary"
+          variant="secondary"
           onClick={handleRemoveLastNumber}
           className="w-full sm:w-auto"
         >
@@ -88,7 +88,7 @@ export function ArrayEditor({ children }: ArrayEditorProps) {
 
         <Button
           icon={Trash}
-          variant="primary"
+          variant="secondary"
           onClick={handleClearArray}
           className="w-full sm:w-auto"
         >
