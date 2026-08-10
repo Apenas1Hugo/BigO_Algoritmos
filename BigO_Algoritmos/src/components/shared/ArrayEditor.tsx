@@ -46,9 +46,9 @@ export function ArrayEditor({ children }: ArrayEditorProps) {
       variants={fadeSlideVariants}
       initial="hidden"
       whileInView="visible"
-      className="mt-8 flex w-full flex-col items-center gap-6"
+      className="mt-8 flex w-full flex-col items-center gap-6 "
     >
-      <div className="flex w-full max-w-4xl justify-center rounded-2xl border border-border bg-card p-4">
+      <div className="flex w-full max-w-4xl justify-center rounded-2xl border border-border bg-card p-4 shadow-lg">
         <ViewArray array={array} />
       </div>
 
@@ -63,7 +63,7 @@ export function ArrayEditor({ children }: ArrayEditorProps) {
             }
           }}
           placeholder="Digite um número"
-          className="w-full rounded-xl border border-border bg-background px-4 py-3 outline-none transition-colors focus:border-primary"
+          className="w-full rounded-xl border border-border bg-background px-4 py-3 outline-none transition-colors focus:border-primary shadow-lg"
         />
       </div>
 

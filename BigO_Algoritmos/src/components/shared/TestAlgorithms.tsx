@@ -81,7 +81,7 @@ export function TestAlgorithms({ tabalgorithms }: AlgorithmTabProps) {
               duration: 0.25,
               ease: "easeOut",
             }}
-            className="rounded-xl border border-border bg-background p-6"
+            className="rounded-xl border border-border bg-background p-6 shadow-md"
           >
             {currentTab.content}
           </motion.div>
