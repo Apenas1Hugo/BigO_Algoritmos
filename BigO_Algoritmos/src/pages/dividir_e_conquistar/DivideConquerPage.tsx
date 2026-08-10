@@ -8,30 +8,19 @@ import {
   TestAlgorithms,
   type AlgorithmTab,
 } from "../../components/shared/TestAlgorithms";
-import { ArrayEditor } from "../../components/shared/ArrayEditor";
 import { QuickSortView } from "./QuickSort";
-
-
+import { MergeSortView } from "./MergeSort";
 
 const algoritmostestados: AlgorithmTab[] = [
   {
     id: "quick-sort",
     title: "Quick Sort",
-    content: ( <QuickSortView/>
-    ),
+    content: <QuickSortView />,
   },
   {
     id: "merge-sort",
     title: "Merge Sort",
-    content: (
-      <ArrayEditor>
-        {(array) => (
-          <Button variant="secondary" onClick={() => alert(array)}>
-            Alert do Array
-          </Button>
-        )}
-      </ArrayEditor>
-    ),
+    content: <MergeSortView />,
   },
 ];
 
