@@ -10,6 +10,8 @@ import {
 } from "../../components/shared/TestAlgorithms";
 import { QuickSortView } from "./QuickSort";
 import { MergeSortView } from "./MergeSort";
+import { ExempleQuickSort } from "./ExempleQuickSort";
+import { ExempleMergeSort } from "./ExempleMergeSort";
 
 const algoritmostestados: AlgorithmTab[] = [
   {
@@ -64,6 +66,7 @@ export function DivideConquerPage() {
                 dependendo da estratégia de escolha do pivô.
               </li>
             </ul>
+            <ExempleQuickSort/>
           </>
         }
       />
@@ -107,8 +110,14 @@ export function DivideConquerPage() {
               auxiliar durante o processo de intercalação, diferentemente do
               Quick Sort, que normalmente realiza a ordenação no próprio vetor.
             </p>
+            <ExempleMergeSort/>
           </>
         }
+      />
+
+      <PageHeader
+        title="Teste os algoritmos"
+        description="Monte uma lista de números e experimente diferentes algoritmos de ordenação para entender como eles funcionam na prática."
       />
       <TestAlgorithms tabalgorithms={algoritmostestados} />
       <div className="mt-10 flex justify-between">
