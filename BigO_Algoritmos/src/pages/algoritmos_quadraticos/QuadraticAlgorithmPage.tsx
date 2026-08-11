@@ -4,6 +4,30 @@ import { Container } from "../../components/shared/Container";
 import { PageHeader } from "../../components/shared/PageHeader";
 
 import { useNavigate } from "react-router-dom";
+import {
+  TestAlgorithms,
+  type AlgorithmTab,
+} from "../../components/shared/TestAlgorithms";
+import { ExempleInsertionSort } from "./ExempleInsertionSort";
+import { InsertionSortView } from "./InsertionSort";
+
+const algoritmostestados: AlgorithmTab[] = [
+  {
+    id: "Insertion Sort",
+    title: "Insertion Sort",
+    content: <InsertionSortView/>,
+  },
+  {
+    id: "Selection Sort",
+    title: "Selection Sort",
+    content: <h1>Selection Sort</h1>,
+  },
+  {
+    id: "Bubble Sort",
+    title: "Bubble Sort",
+    content: <h1>Bubble Sort</h1>,
+  },
+];
 
 export function QuadraticAlgorithmsPage() {
   const navigate = useNavigate();
@@ -50,6 +74,7 @@ export function QuadraticAlgorithmsPage() {
               pequenos ou quase ordenados, além de possuir implementação simples
               e não exigir memória auxiliar.
             </p>
+            <ExempleInsertionSort/>
           </>
         }
       />
@@ -129,6 +154,12 @@ export function QuadraticAlgorithmsPage() {
           </>
         }
       />
+
+      <PageHeader
+        title="Teste os algoritmos"
+        description="Monte uma lista de números e experimente diferentes algoritmos de ordenação para entender como eles funcionam na prática."
+      />
+      <TestAlgorithms tabalgorithms={algoritmostestados} />
 
       <div className="mt-10 flex justify-between">
         <Button

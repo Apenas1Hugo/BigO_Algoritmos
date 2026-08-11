@@ -24,6 +24,7 @@ export function QuickSortView() {
     setArrayOrdenado(resultado);
   }
   return (
+    
     <ArrayEditor>
       {(array) => (
         <div className="flex w-full flex-col items-center gap-4">
