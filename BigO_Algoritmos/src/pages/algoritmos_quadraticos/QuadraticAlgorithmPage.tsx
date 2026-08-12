@@ -10,17 +10,19 @@ import {
 } from "../../components/shared/TestAlgorithms";
 import { ExempleInsertionSort } from "./ExempleInsertionSort";
 import { InsertionSortView } from "./InsertionSort";
+import { ExempleSelectionSort } from "./ExempleSelectionSort";
+import { SelectionSortView } from "./SelectionSort";
 
 const algoritmostestados: AlgorithmTab[] = [
   {
     id: "Insertion Sort",
     title: "Insertion Sort",
-    content: <InsertionSortView/>,
+    content: <InsertionSortView />,
   },
   {
     id: "Selection Sort",
     title: "Selection Sort",
-    content: <h1>Selection Sort</h1>,
+    content: <SelectionSortView/>,
   },
   {
     id: "Bubble Sort",
@@ -74,7 +76,7 @@ export function QuadraticAlgorithmsPage() {
               pequenos ou quase ordenados, além de possuir implementação simples
               e não exigir memória auxiliar.
             </p>
-            <ExempleInsertionSort/>
+            <ExempleInsertionSort />
           </>
         }
       />
@@ -112,6 +114,7 @@ export function QuadraticAlgorithmsPage() {
               motivo, sua complexidade permanece quadrática independentemente da
               ordem inicial dos dados.
             </p>
+            <ExempleSelectionSort />
           </>
         }
       />
