@@ -12,6 +12,7 @@ import { ExempleInsertionSort } from "./ExempleInsertionSort";
 import { InsertionSortView } from "./InsertionSort";
 import { ExempleSelectionSort } from "./ExempleSelectionSort";
 import { SelectionSortView } from "./SelectionSort";
+import { ExempleBubbleSort } from "./ExempleBubbleSort";
 
 const algoritmostestados: AlgorithmTab[] = [
   {
@@ -22,7 +23,7 @@ const algoritmostestados: AlgorithmTab[] = [
   {
     id: "Selection Sort",
     title: "Selection Sort",
-    content: <SelectionSortView/>,
+    content: <SelectionSortView />,
   },
   {
     id: "Bubble Sort",
@@ -154,6 +155,7 @@ export function QuadraticAlgorithmsPage() {
               sendo pouco utilizado em aplicações que manipulam grandes volumes
               de dados.
             </p>
+            <ExempleBubbleSort />
           </>
         }
       />
