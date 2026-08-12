@@ -13,6 +13,7 @@ import { InsertionSortView } from "./InsertionSort";
 import { ExempleSelectionSort } from "./ExempleSelectionSort";
 import { SelectionSortView } from "./SelectionSort";
 import { ExempleBubbleSort } from "./ExempleBubbleSort";
+import { BubbleSortView } from "./BubbleSort";
 
 const algoritmostestados: AlgorithmTab[] = [
   {
@@ -28,7 +29,7 @@ const algoritmostestados: AlgorithmTab[] = [
   {
     id: "Bubble Sort",
     title: "Bubble Sort",
-    content: <h1>Bubble Sort</h1>,
+    content: <BubbleSortView/>,
   },
 ];
 
