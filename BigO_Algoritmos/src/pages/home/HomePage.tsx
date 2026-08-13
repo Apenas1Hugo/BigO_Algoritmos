@@ -45,7 +45,10 @@ export function HomePage() {
       <div className="mt-10 flex justify-end">
         <Button
           icon={LandPlot}
-          onClick={() => void navigate("/dividir-e-conquistar")}
+          onClick={() => {
+            void navigate("/dividir-e-conquistar");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           variant="secondary"
         >
           <span className="hidden lg:inline"> Dividir e Conquistar → </span>

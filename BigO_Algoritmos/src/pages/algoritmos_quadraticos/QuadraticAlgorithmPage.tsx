@@ -29,7 +29,7 @@ const algoritmostestados: AlgorithmTab[] = [
   {
     id: "Bubble Sort",
     title: "Bubble Sort",
-    content: <BubbleSortView/>,
+    content: <BubbleSortView />,
   },
 ];
 
@@ -170,7 +170,13 @@ export function QuadraticAlgorithmsPage() {
       <div className="mt-10 flex justify-between">
         <Button
           icon={LandPlot}
-          onClick={() => void navigate("/dividir-e-conquistar")}
+          onClick={() => {
+            void navigate("/dividir-e-conquistar");
+            window.scrollTo({
+              top: document.documentElement.scrollHeight,
+              behavior: "smooth",
+            });
+          }}
           variant="secondary"
         >
           <span className="hidden lg:inline">← Dividir e Conquistar</span>
@@ -178,7 +184,10 @@ export function QuadraticAlgorithmsPage() {
 
         <Button
           icon={TreePine}
-          onClick={() => void navigate("/arvore")}
+          onClick={() => {
+            void navigate("/arvore");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           variant="secondary"
         >
           <span className="hidden lg:inline">Árvore →</span>

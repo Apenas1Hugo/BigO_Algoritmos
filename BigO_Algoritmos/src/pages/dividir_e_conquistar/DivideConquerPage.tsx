@@ -66,7 +66,7 @@ export function DivideConquerPage() {
                 dependendo da estratégia de escolha do pivô.
               </li>
             </ul>
-            <ExempleQuickSort/>
+            <ExempleQuickSort />
           </>
         }
       />
@@ -110,7 +110,7 @@ export function DivideConquerPage() {
               auxiliar durante o processo de intercalação, diferentemente do
               Quick Sort, que normalmente realiza a ordenação no próprio vetor.
             </p>
-            <ExempleMergeSort/>
+            <ExempleMergeSort />
           </>
         }
       />
@@ -123,14 +123,23 @@ export function DivideConquerPage() {
       <div className="mt-10 flex justify-between">
         <Button
           icon={House}
-          onClick={() => void navigate("/")}
+          onClick={() => {
+            void navigate("/");
+            window.scrollTo({
+              top: document.documentElement.scrollHeight,
+              behavior: "smooth",
+            });
+          }}
           variant="secondary"
         >
           <span className="hidden lg:inline"> ← Home </span>
         </Button>
         <Button
           icon={Box}
-          onClick={() => void navigate("/algoritmos-quadraticos")}
+          onClick={() => {
+            void navigate("/algoritmos-quadraticos");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           variant="secondary"
         >
           <span className="hidden lg:inline"> Algoritmos Quadraticos → </span>

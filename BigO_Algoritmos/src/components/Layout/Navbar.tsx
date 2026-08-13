@@ -93,25 +93,43 @@ export function Navbar() {
             ease: "easeOut",
           }}
         >
-          <Button icon={House} onClick={() => void navigate("/")}>
+          <Button
+            icon={House}
+            onClick={() => {
+              void navigate("/");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
             <span className="hidden lg:inline ">Início</span>
           </Button>
 
           <Button
             icon={LandPlot}
-            onClick={() => void navigate("/dividir-e-conquistar")}
+            onClick={() => {
+              void navigate("/dividir-e-conquistar");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
           >
             <span className="hidden lg:inline">Dividir e Conquistar</span>
           </Button>
 
           <Button
             icon={Box}
-            onClick={() => void navigate("/algoritmos-quadraticos")}
+            onClick={() => {
+              void navigate("/algoritmos-quadraticos");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
           >
             <span className="hidden lg:inline">Algoritmos Quadráticos</span>
           </Button>
 
-          <Button icon={TreePine} onClick={() => void navigate("/arvore")}>
+          <Button
+            icon={TreePine}
+            onClick={() => {
+              void navigate("/arvore");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
             <span className="hidden lg:inline">Árvore</span>
           </Button>
 

@@ -121,7 +121,15 @@ export function TreePage() {
       <div className="mt-10 flex justify-start">
         <Button
           icon={LandPlot}
-          onClick={() => void navigate("/algoritmos-quadraticos")}
+          onClick={() => {
+            void navigate("/algoritmos-quadraticos");
+            setTimeout(() => {
+              window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: "smooth",
+              });
+            }, 90);
+          }}
           variant="secondary"
         >
           <span className="hidden lg:inline">← Algoritmos Quadráticos</span>
