@@ -4,6 +4,7 @@ import { Container } from "../../components/shared/Container";
 import { PageHeader } from "../../components/shared/PageHeader";
 
 import { useNavigate } from "react-router-dom";
+import { ExempleHeapSort } from "./ExempleHeapSort";
 
 export function TreePage() {
   const navigate = useNavigate();
@@ -85,35 +86,7 @@ export function TreePage() {
               previsível. Além disso, realiza a ordenação no próprio vetor,
               dispensando memória auxiliar significativa.
             </p>
-          </>
-        }
-      />
-
-      <PageHeader
-        title="Vantagens e desvantagens"
-        description={
-          <>
-            <p>
-              O Heap Sort apresenta desempenho consistente, independentemente da
-              ordem inicial dos dados, sendo uma excelente alternativa quando se
-              deseja garantir complexidade O(n log n). Outro ponto positivo é
-              que sua implementação pode ser feita in-place, utilizando apenas
-              memória adicional constante.
-            </p>
-
-            <p className="mt-4">
-              Como desvantagem, o algoritmo realiza muitos acessos não
-              sequenciais à memória, tornando-o menos eficiente na prática que o
-              Quick Sort em diversas situações. Além disso, sua implementação é
-              mais complexa devido à construção e manutenção da Heap.
-            </p>
-
-            <p className="mt-4">
-              Apesar dessas limitações, compreender o Heap Sort é importante,
-              pois ele demonstra como uma estrutura de dados pode ser utilizada
-              para construir um algoritmo de ordenação eficiente, reforçando a
-              relação entre estruturas de dados e análise de algoritmos.
-            </p>
+            <ExempleHeapSort />
           </>
         }
       />
