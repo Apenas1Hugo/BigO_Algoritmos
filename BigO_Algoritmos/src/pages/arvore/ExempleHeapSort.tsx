@@ -2,6 +2,8 @@ import { motion, type Variants } from "motion/react";
 
 import { Container } from "../../components/shared/Container";
 import { ViewArray } from "../../components/shared/ViewArray";
+import { ViewTree } from "./ViewTree";
+import { PageHeader } from "../../components/shared/PageHeader";
 
 const exampleArray = [4, 10, 3, 5, 1];
 
@@ -46,7 +48,7 @@ function Step({ children }: { children: React.ReactNode }) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="flex w-full flex-col items-center gap-4"
+      className="flex w-full flex-col items-center gap-4 "
     >
       {children}
     </motion.div>
@@ -60,9 +62,18 @@ export function ExempleHeapSort() {
       className="mx-auto my-6 flex w-full max-w-3xl flex-col items-center gap-6 rounded-lg border border-border p-4 shadow-lg sm:p-5"
     >
       <Step>
+        <PageHeader
+          title="Observação"
+          description="Para fins didáticos, o exemplo do Heap Sort demonstrará tanto o array no formato normal como em formato de árvore."
+        />
+      </Step>
+
+      <Step>
         <p className="text-center text-sm">Primeiro temos o array completo:</p>
 
         <ViewArray array={exampleArray} />
+        <p>Em árvore:</p>
+        <ViewTree array={exampleArray} />
       </Step>
 
       <Step>
@@ -72,8 +83,9 @@ export function ExempleHeapSort() {
           sempre maior que seus filhos, considerando o array como uma árvore
           binária completa:
         </p>
-
         <ViewArray array={heapMaximo} />
+        <p>Em árvore:</p>
+        <ViewTree array={heapMaximo} />
       </Step>
 
       <Step>
@@ -86,12 +98,15 @@ export function ExempleHeapSort() {
         <div className="flex flex-wrap items-center justify-center gap-6">
           <div className="flex flex-col items-center gap-2">
             <p className="text-sm font-medium">Heap restante</p>
-            <ViewArray array={posSwap1} />
-          </div>
 
-          <div className="flex flex-col items-center gap-2">
+            <ViewArray array={posSwap1} />
             <p className="text-sm font-medium">Ordenado</p>
             <ViewArray array={ordenado1} />
+
+            <p className="text-sm font-medium mt-6">Em árvore:</p>
+            <ViewTree array={posSwap1} />
+            <p className="text-sm font-medium">Em árvore</p>
+            <ViewTree array={ordenado1} />
           </div>
         </div>
       </Step>
@@ -103,6 +118,8 @@ export function ExempleHeapSort() {
         </p>
 
         <ViewArray array={heapifyApos1} />
+        <p>Em árvore:</p>
+        <ViewTree array={heapifyApos1} />
       </Step>
 
       <Step>
@@ -115,26 +132,40 @@ export function ExempleHeapSort() {
         <div className="flex flex-wrap items-center justify-center gap-6">
           <div className="flex flex-col items-center gap-2">
             <p className="text-sm font-medium">Heap restante</p>
+
             <ViewArray array={posSwap2} />
+            <p>Em árvore:</p>
+            <ViewTree array={posSwap2} />
           </div>
 
           <div className="flex flex-col items-center gap-2">
             <p className="text-sm font-medium">Ordenado</p>
+
             <ViewArray array={ordenado2} />
+            <p>Em árvore:</p>
+            <ViewTree array={ordenado2} />
           </div>
         </div>
-        <div className="mt-4">
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-6">
           <ViewArray array={heapifyApos2} />
+          <p>Em árvore:</p>
+          <ViewTree array={heapifyApos2} />
         </div>
         <div className="flex flex-wrap items-center justify-center gap-6">
           <div className="flex flex-col items-center gap-2">
             <p className="text-sm font-medium">Heap restante</p>
+
             <ViewArray array={posSwap3} />
+            <p>Em árvore:</p>
+            <ViewTree array={posSwap3} />
           </div>
 
           <div className="flex flex-col items-center gap-2">
             <p className="text-sm font-medium">Ordenado</p>
+
             <ViewArray array={ordenado3} />
+            <p>Em árvore:</p>
+            <ViewTree array={ordenado3} />
           </div>
         </div>
       </Step>
@@ -148,12 +179,17 @@ export function ExempleHeapSort() {
         <div className="flex flex-wrap items-center justify-center gap-6">
           <div className="flex flex-col items-center gap-2">
             <p className="text-sm font-medium">Heap ordenado</p>
+
             <ViewArray array={posSwapFinal} />
+            <p>Em árvore:</p>
+            <ViewTree array={posSwapFinal} />
           </div>
 
           <div className="flex flex-col items-center gap-2">
             <p className="text-sm font-medium">Região ordenada</p>
             <ViewArray array={ordenado3} />
+            <p>Em árvore:</p>
+            <ViewTree array={ordenado3} />
           </div>
         </div>
       </Step>
@@ -164,6 +200,8 @@ export function ExempleHeapSort() {
         </p>
 
         <ViewArray array={arrayOrdenado} />
+        <p>Em árvore:</p>
+        <ViewTree array={arrayOrdenado} />
       </Step>
     </Container>
   );
