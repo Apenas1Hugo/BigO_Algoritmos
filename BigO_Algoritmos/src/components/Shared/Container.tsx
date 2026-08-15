@@ -32,7 +32,7 @@ export function Container({
       }}
       viewport={{
         once: true,
-        amount: 0.15,
+        amount: 0.1,
       }}
       transition={{
         duration: 0.5,
