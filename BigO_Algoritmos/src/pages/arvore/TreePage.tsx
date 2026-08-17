@@ -3,8 +3,22 @@ import { Button } from "../../components/shared/Button";
 import { Container } from "../../components/shared/Container";
 import { PageHeader } from "../../components/shared/PageHeader";
 
+import {
+  TestAlgorithms,
+  type AlgorithmTab,
+} from "../../components/shared/TestAlgorithms";
+
 import { useNavigate } from "react-router-dom";
 import { ExempleHeapSort } from "./ExempleHeapSort";
+import { HeapSort } from "./HeapSort";
+
+const algoritmostestados: AlgorithmTab[] = [
+  {
+    id: "Heap Sort",
+    title: " Heap Sort",
+    content: <HeapSort />,
+  },
+];
 
 export function TreePage() {
   const navigate = useNavigate();
@@ -90,6 +104,12 @@ export function TreePage() {
           </>
         }
       />
+
+      <PageHeader
+        title="Teste os algoritmos"
+        description="Monte uma lista de números e experimente diferentes algoritmos de ordenação para entender como eles funcionam na prática."
+      />
+      <TestAlgorithms tabalgorithms={algoritmostestados} />
 
       <div className="mt-10 flex justify-start">
         <Button
