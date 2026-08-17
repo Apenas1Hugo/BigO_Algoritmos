@@ -10,13 +10,13 @@ import {
 
 import { useNavigate } from "react-router-dom";
 import { ExempleHeapSort } from "./ExempleHeapSort";
-import { HeapSort } from "./HeapSort";
+import { HeapSortView } from "./HeapSort";
 
 const algoritmostestados: AlgorithmTab[] = [
   {
     id: "Heap Sort",
     title: " Heap Sort",
-    content: <HeapSort />,
+    content: <HeapSortView />,
   },
 ];
 
